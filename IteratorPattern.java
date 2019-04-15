@@ -5,11 +5,13 @@ public interface Aggregate{
     public abstract Iterator();
 }
 
+
 public interface Iterator{
     //hasNext():配列の最後かどうか next():現在の要素を返しポインタを進める
     public abstract boolean hasNext();
     public abstract Object next();
 }
+
 
 class Book{
     private String name;
@@ -28,6 +30,7 @@ class Book{
         return this.author;
     }
 }
+
 
 class BookShelf implements Aggregate{
     private Vector<Book> books;
@@ -55,6 +58,7 @@ class BookShelf implements Aggregate{
     }
 }
 
+
 class BookShelfIterator implements Iterator{
     private BookShelf bookShelf;
     private int index;
@@ -77,6 +81,7 @@ class BookShelfIterator implements Iterator{
         index++;
         return book;
     }
+    
     public static void main(String[] args) {
         BookShelf bookShelf = new BookShelf();
 
